@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">MiniMusic</string>
+    <string name="app_name">WeiYan</string>
+    <string name="input_identity_text">******</string>
+    <string name="input_password_text"/>
 </resources>

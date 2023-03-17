@@ -1,18 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@drawable/bgm" tools:context=".MainActivity">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="微 言" android:textColor="#cc99cc" android:textSize="45dp" android:layout_marginTop="40dp" android:layout_gravity="center"/>
+    <ImageView android:layout_width="170dp" android:layout_height="170dp" android:layout_gravity="center" android:layout_marginTop="30dp" android:src="@drawable/bga"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="有微言焉，如玉之韫于山" android:textColor="#cc66cc" android:textSize="17dp" android:layout_marginTop="24dp" android:layout_gravity="center"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="珠之函于渊，不可浅而获也。" android:textColor="#cc66cc" android:textSize="17dp" android:layout_marginTop="15dp" android:layout_gravity="center"/>
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="账 号:" android:textColor="#cc66cc" android:textSize="27dp" android:layout_marginTop="50dp" android:layout_marginLeft="20dp"/>
+        <EditText android:id="@+id/input_identity_text" android:layout_width="250dp" android:layout_height="wrap_content" android:layout_marginTop="50dp" android:layout_marginLeft="5dp" android:textSize="23dp" android:maxLines="1" android:hint="请输入用户名"/>
+    </LinearLayout>
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#cc66cc" android:text="密 码:" android:layout_marginTop="20dp" android:textSize="27dp" android:layout_marginLeft="20dp"/>
+        <EditText android:id="@+id/input_password_text" android:layout_width="250dp" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:layout_marginTop="20dp" android:textSize="23dp" android:maxLines="1" android:hint="请输入密码"/>
+    </LinearLayout>
+    <Button android:id="@+id/button" android:layout_width="200dp" android:layout_height="49dp" android:layout_marginLeft="100dp" android:layout_marginTop="30dp" android:backgroundTint="#cc66cc" android:onClick="Login" android:text="登录" android:textSize="20dp" tools:ignore="MissingConstraints"/>
+</LinearLayout>
