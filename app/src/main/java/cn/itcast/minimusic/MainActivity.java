@@ -29,9 +29,10 @@ public class MainActivity extends AppCompatActivity {
                 String login_psw="12345";
                 String inputname=name.getText().toString();
                 String inputpsw=passwd.getText().toString();
-                if(login_name.equals(inputname)&login_psw.equals(inputpsw)){
+                if(login_name.equals(inputname)&&login_psw.equals(inputpsw)){
                     Intent intent=new Intent(MainActivity.this,main_page.class);
                     startActivity(intent);
+                    finish();
                 }
                 else{
                     Toast.makeText(MainActivity.this,"密码错误",Toast.LENGTH_SHORT).show();
