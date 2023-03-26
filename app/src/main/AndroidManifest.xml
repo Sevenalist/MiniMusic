@@ -30,6 +30,9 @@
         <activity android:name="cn.itcast.minimusic.tiao_2" />
         <activity android:name="cn.itcast.minimusic.tiao_1" />
         <activity android:name="cn.itcast.minimusic.i_like" />
+        <activity android:name="cn.itcast.minimusic.MusicActivity" />
+
+        <service android:name="cn.itcast.minimusic.MusicService" />
     </application>
 
 </manifest>

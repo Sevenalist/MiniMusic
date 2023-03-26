@@ -1,64 +1,73 @@
 package cn.itcast.minimusic;
 
+import android.content.Intent;
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link BlankFragment2#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.fragment.app.Fragment;
+
 public class BlankFragment2 extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public BlankFragment2() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment BlankFragment2.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static BlankFragment2 newInstance(String param1, String param2) {
-        BlankFragment2 fragment = new BlankFragment2();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    public static Handler handler;
+    private View view;
+    //创建歌曲的String数组和歌手图片的int数组
+    public String[] name={"uki——deja vu","Noctyx——Stuck In The Abyss","初音——弱虫"};
+    public static int[] icons={R.drawable.music0,R.drawable.music1,R.drawable.music2};
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+        //绑定布局，只不过这里是用inflate()方法
+        view=inflater.inflate(R.layout.music_list,null);
+        //创建listView列表并且绑定控件
+        ListView listView=view.findViewById(R.id.lv);
+        //实例化一个适配器
+        MyBaseAdapter adapter=new MyBaseAdapter();
+        //列表设置适配器
+        listView.setAdapter(adapter);
+        //列表元素的点击监听器
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //创建Intent对象，参数就是从frag1跳转到MusicActivity
+                Intent intent=new Intent(BlankFragment2.this.getContext(), MusicActivity.class);
+                //将歌曲名和歌曲的下标存入Intent对象
+                intent.putExtra("name",name[position]);
+                intent.putExtra("position",String.valueOf(position));
+                //开始跳转
+                startActivity(intent);
+            }
+        });
+        return view;
+    }
+    //这里是创建一个自定义适配器，可以作为模板
+    class MyBaseAdapter extends BaseAdapter{
+        @Override
+        public int getCount(){return  name.length;}
+        @Override
+        public Object getItem(int i){return name[i];}
+        @Override
+        public long getItemId(int i){return i;}
+
+        @Override
+        public View getView(int i ,View convertView, ViewGroup parent) {
+            //绑定好VIew，然后绑定控件
+            View view=View.inflate(BlankFragment2.this.getContext(),R.layout.item_layout,null);
+            TextView tv_name=view.findViewById(R.id.item_name);
+            ImageView iv=view.findViewById(R.id.iv);
+            //设置控件显示的内容，就是获取的歌曲名和歌手图片
+            tv_name.setText(name[i]);
+            iv.setImageResource(icons[i]);
+            return view;
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank2, container, false);
-    }
 }
+
+
