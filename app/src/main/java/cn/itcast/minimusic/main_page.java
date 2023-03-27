@@ -1,7 +1,11 @@
 package cn.itcast.minimusic;
 
+import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 //public class main_page extends AppCompatActivity {
@@ -60,5 +64,37 @@ public class main_page extends AppCompatActivity implements View.OnClickListener
         }
         ft.commit();
     }
+
+    @Override
+    public void onBackPressed(){   //从zhu_page中直接退出到那个桌面，退出程序
+        AlertDialog dialog;
+        AlertDialog.Builder builder=new AlertDialog.Builder(this) //设置builder对用户是否退出进行提示
+                .setTitle("退出提示")
+                .setMessage("你要退出应用?")
+                .setPositiveButton("我要",new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        dialog.dismiss();
+                        Activity activity = (Activity) main_page.this;
+                        Intent intent = new Intent(Intent.ACTION_MAIN);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.addCategory(Intent.CATEGORY_HOME);//退出到桌面
+                        activity.startActivity(intent);
+                        System.exit(0);
+
+
+                    }
+                })
+                .setNegativeButton("不要", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+                        dialog.dismiss();
+                    }
+                });
+        dialog=builder.create();
+        dialog.show();
+    }
+
 }
 
