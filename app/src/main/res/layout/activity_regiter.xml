@@ -1,42 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bgm"
-    tools:context=".LoginActivity">
+    tools:context=".Register"
+    android:background="@drawable/bgm">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="微 言"
+        android:text="注册"
         android:textColor="#cc99cc"
         android:textSize="45dp"
         android:layout_marginTop="40dp"
         android:layout_gravity="center"/>
-    <ImageView
-        android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/bga"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="有微言焉，如玉之韫于山"
-        android:textColor="#cc66cc"
-        android:textSize="17dp"
-        android:layout_marginTop="24dp"
-        android:layout_gravity="center"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
 
-        android:text="珠之函于渊，不可浅而获也。"
-        android:textColor="#cc66cc"
-        android:textSize="17dp"
-        android:layout_marginTop="15dp"
-        android:layout_gravity="center"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,8 +30,7 @@
             android:layout_marginTop="50dp"
             android:layout_marginLeft="20dp"/>
         <EditText
-            android:id="@+id/input_identity_text"
-
+            android:id="@+id/regiter"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
@@ -60,6 +39,7 @@
             android:maxLines="1"
             android:hint="请输入用户名"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -73,7 +53,7 @@
             android:textSize="27dp"
             android:layout_marginLeft="20dp"/>
         <EditText
-            android:id="@+id/input_password_text"
+            android:id="@+id/mima"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -82,36 +62,62 @@
             android:maxLines="1"
             android:hint="请输入密码"/>
     </LinearLayout>
+
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp">
-        <CheckBox
-            android:id="@+id/cb_Remember"
+        android:orientation="horizontal">
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="记住密码"/>
+            android:textColor="#cc66cc"
+            android:text="确认密码:"
+            android:layout_marginTop="20dp"
+            android:textSize="27dp"
+            android:layout_marginLeft="20dp"/>
+        <EditText
+            android:id="@+id/input_password_text_agin"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:textSize="23dp"
+            android:maxLines="1"
+            android:hint="请再次输入密码"/>
     </LinearLayout>
-    <Button android:id="@+id/login_btn"
+
+    <CheckBox
+        android:id="@+id/cb_Agree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="同意协议"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:id="@+id/button"
         android:layout_width="200dp"
         android:layout_height="49dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:backgroundTint="#cc66cc"
         android:onClick="Login"
-        android:text="登录"
+        android:text="注册"
         android:textSize="20dp"
-        tools:ignore="MissingConstraints"/>
-    <TextView
-        android:id="@+id/toReg"
-        android:layout_width="wrap_content"
+        tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="没有账号？"
-        android:textColor="#cc66cc"
-        android:textSize="15dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"/>
+        android:text="账号已存在"
+        android:textSize="25sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <ImageView
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/bear" />
 </LinearLayout>
