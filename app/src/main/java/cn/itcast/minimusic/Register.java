@@ -28,37 +28,13 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.activity_regiter);
 
 //        返回登录页面
-        button2 = (Button) findViewById(R.id.button2);
+//        button2 = (Button) findViewById(R.id.button2);
 
         etAccount = findViewById(R.id.regiter);
         etPass = findViewById(R.id.mima);
         etPassConfirm = findViewById(R.id.input_password_text_agin);
         btnRegister = findViewById(R.id.button);
         cbAgree = findViewById(R.id.cb_Agree);
-
-        button2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                //Intent intent = new Intent(MainActivity.this,DetailActivity.class);
-                Intent intent = new Intent(Register.this,LoginActivity.class);
-                startActivity(intent);
-            }
-        });
-
-//        btnRegister.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Register.this, LoginActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-
-//       第一种方式写监听事件
-//        btnRegister.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                …………
-//            }
-//        });
 
 //        第二种方式写监听事件
         btnRegister.setOnClickListener(this);

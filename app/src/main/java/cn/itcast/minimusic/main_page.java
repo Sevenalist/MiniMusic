@@ -57,7 +57,7 @@ public class main_page extends AppCompatActivity implements View.OnClickListener
                 ft.replace(R.id.content,new BlankFragment1());
                 break;
             case R.id.songbook:
-                ft.replace(R.id.content,new BlankFragment2());
+                ft.replace(R.id.content,new LocalMusic());
                 break;
             default:
                 break;

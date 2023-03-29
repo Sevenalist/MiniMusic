@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/purepink"
+    tools:context=".LocalMusic">
+
+    <RelativeLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="#33EEEEEE">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#9933FA"/>
+        <ImageView
+            android:id="@+id/listen_photo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/record"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+<!--       布局歌名 -->
+        <TextView
+            android:id="@+id/play_song_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="歌曲名"
+            android:layout_toRightOf="@id/listen_photo"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/play_singer_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/play_song_message"
+            android:text="歌手"
+            android:layout_below="@id/play_song_message"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"/>
+<!--        布局三个按钮-->
+        <ImageView
+            android:id="@+id/next_photo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@mipmap/next"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true" />
+        <ImageView
+            android:id="@+id/pause_photo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/pause"
+            android:layout_toLeftOf="@id/next_photo"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"/>
+        <ImageView
+            android:id="@+id/last_photo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@mipmap/last"
+            android:layout_toLeftOf="@id/pause_photo"
+            android:layout_marginRight="25dp"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/music_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_layout">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">WeiYan</string>
+    <string name="app_name">微言</string>
     <string name="input_identity_text">******</string>
-
     <string name="input_password_text"/>
 </resources>
