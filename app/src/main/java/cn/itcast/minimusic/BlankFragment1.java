@@ -36,12 +36,10 @@ public class BlankFragment1 extends Fragment  {
 
     public BlankFragment1() {
         banners = new ArrayList<>();
-        banners.add(new infoBean(R.drawable.happy));
-        banners.add(new infoBean(R.drawable.nospeak));
-        banners.add(new infoBean(R.drawable.angry));
-
+        banners.add(new infoBean(R.drawable.astronout));
+        banners.add(new infoBean(R.drawable.nightalong));
+        banners.add(new infoBean(R.drawable.penguin));
     }
-
 
     public static BlankFragment1 newInstance(String param1, String param2) {
         BlankFragment1 fragment = new BlankFragment1();
@@ -52,16 +50,6 @@ public class BlankFragment1 extends Fragment  {
         return fragment;
     }
 
-
-
-
-
-
-
-
-
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,11 +57,7 @@ public class BlankFragment1 extends Fragment  {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-
     }
-
-
 
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container,
@@ -86,7 +70,6 @@ public class BlankFragment1 extends Fragment  {
                 //添加指示器
                 .setIndicator(new CircleIndicator(getContext()));
 
-
         banner.setOnBannerListener(new OnBannerListener() {
             Intent intent=new Intent();
             @Override
@@ -95,26 +78,20 @@ public class BlankFragment1 extends Fragment  {
                 Log.i("tag", "你点了第"+position+"张轮播图");
                 switch (position){
                     case 0:
-
                         intent.setClass(getActivity(),tiao_1.class);
                         startActivity(intent);
                         break;
                     case 1:
-
                         intent.setClass(getActivity(),tiao_2.class);
                         startActivity(intent);
                         break;
                     case 2:
-
                         intent.setClass(getActivity(),tiao_3.class);
                         startActivity(intent);
                         break;
-
                 }
             }
         });
-
-
 
         Button btn_ilike=inflate.findViewById(R.id.btn_ilike);
         btn_ilike.setOnClickListener(new View.OnClickListener() {
@@ -124,15 +101,8 @@ public class BlankFragment1 extends Fragment  {
                 startActivity(intent);
             }
         });
-
         return inflate;
-
-
-
-
     }
-
-
 }
 
 

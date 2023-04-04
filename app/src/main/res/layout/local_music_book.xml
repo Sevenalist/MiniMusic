@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/purepink"
+    android:background="@color/pink"
     tools:context=".LocalMusic">
 
     <RelativeLayout
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
-        android:background="#33EEEEEE">
+        android:background="@color/pink">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="0.5dp"

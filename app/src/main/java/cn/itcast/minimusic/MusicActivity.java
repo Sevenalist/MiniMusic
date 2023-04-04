@@ -57,7 +57,7 @@ public class MusicActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_music);
+        setContentView(R.layout.music_details);
         //获取从frag1传来的信息
         intent1=getIntent();
         init();

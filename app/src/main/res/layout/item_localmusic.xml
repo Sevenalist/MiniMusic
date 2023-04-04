@@ -10,7 +10,7 @@
     app:contentPadding="10dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="1dp"
-    app:cardBackgroundColor="@color/pink">
+    app:cardBackgroundColor="@color/pinkBackground">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -26,7 +26,7 @@
             android:id="@+id/songName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="我真的谢谢你"
+            android:text="歌曲名"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_toRightOf="@id/music_num"
@@ -36,7 +36,7 @@
             android:id="@+id/music_singer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="许嵩"
+            android:text="歌手"
             android:layout_below="@id/songName"
             android:layout_alignLeft="@id/songName"
             android:layout_marginTop="10dp"
@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/music_singer"
             android:layout_alignParentRight="true"
-            android:text="04:30"
+            android:text="时长"
             android:textSize="14sp"/>
     </RelativeLayout>
 
